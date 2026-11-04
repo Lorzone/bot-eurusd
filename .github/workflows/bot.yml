@@ -12,8 +12,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -29,6 +29,8 @@ jobs:
         run: |
           git config user.name "eurusd-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add state.json STATUS.md news_cache.json trades.csv 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "bot: aggiornamento $(date -u +%Y-%m-%dT%H:%M)"
+          for f in state.json STATUS.md news_cache.json trades.csv; do [ -f "$f" ] && git add "$f"; done
+          if git diff --cached --quiet; then echo "niente da salvare"; exit 0; fi
+          git commit -m "bot: aggiornamento $(date -u +%Y-%m-%dT%H:%M)"
+          git pull --rebase origin main
           git push

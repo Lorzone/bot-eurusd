@@ -218,6 +218,10 @@ def step():
 
     write_status(s, sig, events, news_err)
     save_state(s)
+    p = s["position"]
+    print(f"OK {s['last_bar']} · saldo {s['balance']:.0f} · "
+          f"{'posizione ' + ('LONG' if p['side'] == 1 else 'SHORT') if p else 'nessuna posizione'} · "
+          f"notizie: {'errore ' + news_err if news_err else len(events or []) }")
 
 
 def write_status(s, sig, events, news_err):
