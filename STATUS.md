@@ -1,9 +1,9 @@
 # Bot EURUSD swing — stato
-_Aggiornato: 2026-11-04 17:11 UTC · ultima candela: 2026-11-04 16:00:00+00:00_
+_Aggiornato: 2026-11-04 20:49 UTC · ultima candela: 2026-11-04 19:00:00+00:00_
 
 **Saldo:** 100,000 $ (+0.00%) · **Challenge:** in corso (obiettivo +10%, max -10%, max -5% al giorno)
 
-**Prezzo:** 1.12208
+**Prezzo:** 1.12259
 
 **Nessuna posizione aperta.**
 
