@@ -174,7 +174,7 @@ def close_position(s, price, when, why):
                R=round(R, 2), pnl=round(pnl, 2), balance=round(s["balance"], 2), why=why)
     pd.DataFrame([row]).to_csv(TRADES, mode="a", header=not TRADES.exists(), index=False)
     s["position"] = None
-    notify(f"🔔 EURUSD chiuso {row['side']} ({why}) a {row['exit']} → {row['R']:+.2f}R, "
+    notify(f"{'📈' if pnl > 0 else '📉'} EURUSD chiuso {row['side']} ({why}) a {row['exit']} → {row['R']:+.2f}R, "
            f"{row['pnl']:+.0f}$ · saldo {row['balance']:.0f}$")
 
 
