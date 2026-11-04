@@ -119,9 +119,37 @@ def save_state(s):
     STATE.write_text(json.dumps(s, indent=2, default=str))
 
 
+CHAT_FILE = ROOT / "telegram_chat.txt"
+
+
+def telegram_chat(tok):
+    """Chat ID: dal secret, altrimenti dal file salvato, altrimenti lo ricava dall'ultimo
+    messaggio che hai scritto al bot (basta premere Avvia sul bot)."""
+    chat = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+    if chat:
+        return chat
+    if CHAT_FILE.exists():
+        return CHAT_FILE.read_text().strip()
+    try:
+        upd = requests.get(f"https://api.telegram.org/bot{tok}/getUpdates", timeout=15).json()
+        for u in reversed(upd.get("result", [])):
+            m = u.get("message") or u.get("my_chat_member") or {}
+            cid = (m.get("chat") or {}).get("id")
+            if cid:
+                CHAT_FILE.write_text(str(cid))
+                requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=15,
+                              data={"chat_id": cid, "text": "✅ Bot EURUSD collegato: da ora ti scrivo qui quando apro o chiudo un trade."})
+                return str(cid)
+    except Exception:
+        pass
+    print("Telegram: token presente ma nessun messaggio ricevuto, premi Avvia sul tuo bot")
+    return None
+
+
 def notify(msg):
     print(msg)
-    tok, chat = os.getenv("TELEGRAM_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
+    tok = os.getenv("TELEGRAM_TOKEN", "").strip()
+    chat = telegram_chat(tok) if tok else None
     if tok and chat:
         try:
             requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
@@ -218,6 +246,8 @@ def step():
 
     write_status(s, sig, events, news_err)
     save_state(s)
+    if os.getenv("TELEGRAM_TOKEN", "").strip():
+        telegram_chat(os.getenv("TELEGRAM_TOKEN").strip())
     p = s["position"]
     print(f"OK {s['last_bar']} · saldo {s['balance']:.0f} · "
           f"{'posizione ' + ('LONG' if p['side'] == 1 else 'SHORT') if p else 'nessuna posizione'} · "

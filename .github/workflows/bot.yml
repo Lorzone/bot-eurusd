@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "eurusd-bot"
           git config user.email "bot@users.noreply.github.com"
-          for f in state.json STATUS.md news_cache.json trades.csv; do [ -f "$f" ] && git add "$f"; done
+          for f in state.json STATUS.md news_cache.json trades.csv telegram_chat.txt; do [ -f "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then echo "niente da salvare"; exit 0; fi
           git commit -m "bot: aggiornamento $(date -u +%Y-%m-%dT%H:%M)"
           git pull --rebase origin main

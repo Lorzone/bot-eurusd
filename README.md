@@ -29,8 +29,8 @@ Challenge simulate (una ogni mese, rischio 1%): 20 passate, 0 bocciate, 14 ancor
 
 ## Avvio su GitHub (10 minuti, dal telefono si può)
 1. Crea un repository **privato** su GitHub e carica tutti i file di questa cartella (compresa `.github/workflows/bot.yml`).
-2. *(Facoltativo, Telegram)* Su Telegram scrivi a **@BotFather** → `/newbot` → copia il token. Poi scrivi un messaggio al tuo bot e apri `https://api.telegram.org/bot<TOKEN>/getUpdates` per leggere il tuo `chat id`.
-   Nel repo: **Settings → Secrets and variables → Actions → New repository secret** → `TELEGRAM_TOKEN` e `TELEGRAM_CHAT_ID`.
+2. *(Facoltativo, Telegram)* Su Telegram scrivi a **@BotFather** → `/newbot` → copia il token. Poi apri il tuo bot e premi **Avvia**.
+   Nel repo: **Settings → Secrets and variables → Actions → New repository secret** → `TELEGRAM_TOKEN`. Il chat ID lo trova il bot da solo (opzionale: secret `TELEGRAM_CHAT_ID`).
 3. Tab **Actions** → abilita i workflow → apri "bot-eurusd" → **Run workflow** per il primo giro.
 4. Da lì gira da solo ogni ora (domenica–venerdì). Apri **STATUS.md** nel repo per vedere saldo, posizione aperta e prossime notizie.
 
