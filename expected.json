@@ -1,0 +1,58 @@
+{
+ "A": {
+  "desc": "Pullback EURUSD (riferimento)",
+  "trade_sett": 1.08,
+  "R_medio": 0.153,
+  "R_oos": 0.154,
+  "winrate": 40.2,
+  "rend_pct": 14.3,
+  "max_dd": -7.1,
+  "pass_": 15,
+  "fail": 0,
+  "aperte": 13,
+  "giorni_pass": 448.0,
+  "r_medio_per_trade_atteso": 0.153
+ },
+ "B": {
+  "desc": "Pullback + breakout EURUSD",
+  "trade_sett": 2.09,
+  "R_medio": 0.16,
+  "R_oos": 0.157,
+  "winrate": 44.5,
+  "rend_pct": 16.1,
+  "max_dd": -6.1,
+  "pass_": 22,
+  "fail": 0,
+  "aperte": 6,
+  "giorni_pass": 376.5,
+  "r_medio_per_trade_atteso": 0.16
+ },
+ "C": {
+  "desc": "Pullback EURUSD + GBPUSD + AUDUSD",
+  "trade_sett": 3.33,
+  "R_medio": 0.124,
+  "R_oos": 0.131,
+  "winrate": 37.1,
+  "rend_pct": 29.6,
+  "max_dd": -8.8,
+  "pass_": 24,
+  "fail": 0,
+  "aperte": 4,
+  "giorni_pass": 186.0,
+  "r_medio_per_trade_atteso": 0.124
+ },
+ "D": {
+  "desc": "Pullback + breakout EURUSD + breakout oro",
+  "trade_sett": 3.08,
+  "R_medio": 0.126,
+  "R_oos": 0.149,
+  "winrate": 43.0,
+  "rend_pct": 19.7,
+  "max_dd": -9.3,
+  "pass_": 22,
+  "fail": 0,
+  "aperte": 6,
+  "giorni_pass": 180.5,
+  "r_medio_per_trade_atteso": 0.126
+ }
+}

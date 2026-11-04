@@ -1,46 +1,32 @@
-# Bot EURUSD swing (v2)
+# Bot paper trading — gara tra 4 strategie
 
-Bot di paper trading su EUR/USD, timeframe 1h–4h, che gira da solo ogni ora su GitHub (gratis) e ti avvisa su Telegram.
+Quattro bot paper girano insieme ogni ora su GitHub Actions, ognuno con un conto simulato da 100.000 $ e le regole di una challenge FTMO 2-Step. Dopo 2-3 mesi si sceglie quale usare nella challenge vera.
 
-## Come funziona
-- **Trend (4h):** compra solo se la EMA20 è sopra la EMA200, vende solo se è sotto.
-- **Ingresso (1h):** a favore del trend, quando l'RSI(14) rientra sopra 30 (long) o sotto 70 (short) → si compra il ritracciamento.
-- **Stop:** 2,5 × ATR(14) sull'1h (di solito 20–35 pips), poi trailing stop alla stessa distanza. Nessun take profit fisso: si lasciano correre i trade buoni.
-- **Rischio:** 1% del conto per trade, una posizione alla volta. Uscita forzata dopo 120 ore.
-- **Notizie:** nessun nuovo ingresso da 60 min prima a 60 min dopo una notizia ad alto impatto USD/EUR (calendario ForexFactory). Se il calendario non è disponibile, il bot non entra.
-- **Regole FTMO simulate:** obiettivo +10%, perdita massima −10%, perdita giornaliera massima −5%.
+**Apri [DASHBOARD.md](DASHBOARD.md)** per il confronto: saldo, trade, risultati dal vivo contro quelli attesi, posizioni aperte, errori.
 
-## Risultati del backtest (gen 2024 – nov 2026, costi 1,3 pips inclusi)
-| | Tutto il periodo | Solo dati mai visti (set 2025 → nov 2026) |
-|---|---|---|
-| Trade | 163 (~1,1/settimana) | 58 |
-| Vinti | 46% | 48% |
-| Media per trade | +0,25R | +0,17R |
-| Profit factor | 1,81 | 1,68 |
-| Max drawdown | −5,8% | −4,7% |
+## I bot
+| Bot | Cosa fa | Rischio/trade | Atteso dal backtest (lug 2024 – nov 2026) |
+|---|---|---|---|
+| A | Pullback EURUSD (riferimento) | 1% | 1,1 trade/sett · +0,15R · DD −7,1% |
+| B | Pullback + breakout EURUSD | 0,75% | 2,1 trade/sett · +0,16R · DD −6,1% |
+| C | Pullback EURUSD + GBPUSD + AUDUSD | 0,7% | 3,3 trade/sett · +0,12R · DD −8,8% |
+| D | Pullback + breakout EURUSD + breakout oro | 0,75% | 3,1 trade/sett · +0,13R · DD −9,3% |
 
-Challenge simulate (una ogni mese, rischio 1%): 20 passate, 0 bocciate, 14 ancora aperte a fine dati. In media servono ~7 mesi; con rischio 1,5% ~5 mesi.
+- **Pullback:** trend 4h (EMA20 vs EMA200) + rientro dell'RSI(14) 1h da 30/70; stop 2,5×ATR poi trailing.
+- **Breakout:** chiusura 4h oltre il massimo/minimo delle ultime 10 candele 4h; stop 2,5×ATR 4h, target 3R.
+- R = quanto si rischia su un trade. +0,15R = in media ogni trade guadagna il 15% di quanto rischia.
 
-**Limiti da sapere:**
-- Il vantaggio è sottile e quasi tutto concentrato nel 2024; tra ottobre 2025 e giugno 2026 il bot è rimasto circa in pari.
-- Le stesse regole su altre coppie (GBP/USD, USD/JPY, USD/CAD…) vanno in pari o perdono: è un risultato specifico di EUR/USD, non una "formula magica".
-- Il filtro notizie non è nel backtest (non c'è uno storico gratuito del calendario).
-- Un backtest non garantisce i risultati futuri: per questo prima si fa paper trading.
-
-## Avvio su GitHub (10 minuti, dal telefono si può)
-1. Crea un repository **privato** su GitHub e carica tutti i file di questa cartella (compresa `.github/workflows/bot.yml`).
-2. *(Facoltativo, Telegram)* Su Telegram scrivi a **@BotFather** → `/newbot` → copia il token. Poi apri il tuo bot e premi **Avvia**.
-   Nel repo: **Settings → Secrets and variables → Actions → New repository secret** → `TELEGRAM_TOKEN`. Il chat ID lo trova il bot da solo (opzionale: secret `TELEGRAM_CHAT_ID`).
-3. Tab **Actions** → abilita i workflow → apri "bot-eurusd" → **Run workflow** per il primo giro.
-4. Da lì gira da solo ogni ora (domenica–venerdì). Apri **STATUS.md** nel repo per vedere saldo, posizione aperta e prossime notizie.
-
-*(Facoltativo)* Con un conto demo **OANDA** gratuito aggiungi il secret `OANDA_TOKEN`: il bot userà prezzi broker veri al posto di Yahoo Finance.
+## Regole di protezione (uguali per tutti)
+- rischio aperto massimo 1,5% (D: 2,25% in totale, max 1,5% sullo stesso strumento)
+- stop giornaliero interno −3% (FTMO boccia a −5%), giornata calcolata da mezzanotte di Praga come FTMO
+- rischio dimezzato se il conto è oltre il 4% sotto il massimo
+- niente nuovi trade da venerdì 19:00 UTC alla riapertura; niente nuovi trade ±60 min dalle notizie ad alto impatto
+- challenge simulata: passata a +10%, bocciata a −10% totale o −5% in un giorno (i bot continuano comunque, per raccogliere dati)
 
 ## File
-- `live_bot.py` — il bot live (paper)
-- `strategies.py` — le strategie (anche le due scartate: breakout Donchian e breakout di Londra)
-- `backtest.py`, `research.py`, `multi.py` — backtest, ricerca dei parametri, test su più coppie
-- `backtest_trades.csv`, `grid_results.csv` — risultati
-- `state.json`, `trades.csv`, `STATUS.md` — creati dal bot mentre gira
+- `run_bots.py` — esecuzione oraria · `engine.py` — motore (stesso codice per live e backtest) · `strategies.py` — strategie
+- `bots/<A-D>/state.json`, `bots/<A-D>/trades.csv` — stato e storico di ogni bot
+- `compare.py`, `backtest_*.csv`, `expected.json` — backtest e valori attesi
+- Telegram: secret `TELEGRAM_TOKEN` (il chat ID viene trovato in automatico). Dati: Yahoo Finance (oro = future GC=F); con secret `OANDA_TOKEN` usa i prezzi di un conto demo OANDA.
 
-Per provarlo sul PC: `pip install -r requirements.txt` e poi `python live_bot.py`.
+**Regola:** si correggono i bug, non le strategie dopo pochi trade persi. Le strategie si rivalutano con almeno 20-30 trade a testa.

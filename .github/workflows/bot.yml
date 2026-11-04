@@ -23,13 +23,12 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           OANDA_TOKEN: ${{ secrets.OANDA_TOKEN }}
-          RISK: "0.01"
-        run: python live_bot.py
+        run: python run_bots.py
       - name: Salva stato e storico
         run: |
           git config user.name "eurusd-bot"
           git config user.email "bot@users.noreply.github.com"
-          for f in state.json STATUS.md news_cache.json trades.csv telegram_chat.txt; do [ -f "$f" ] && git add "$f"; done
+          git add -A bots DASHBOARD.md news_cache.json telegram_chat.txt 2>/dev/null || git add -A bots DASHBOARD.md
           if git diff --cached --quiet; then echo "niente da salvare"; exit 0; fi
           git commit -m "bot: aggiornamento $(date -u +%Y-%m-%dT%H:%M)"
           git pull --rebase origin main
