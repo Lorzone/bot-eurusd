@@ -132,6 +132,11 @@ def telegram_chat(tok):
         return CHAT_FILE.read_text().strip()
     try:
         upd = requests.get(f"https://api.telegram.org/bot{tok}/getUpdates", timeout=15).json()
+        if not upd.get("ok"):
+            print("Telegram: token rifiutato ->", upd.get("description"))
+            return None
+        me = requests.get(f"https://api.telegram.org/bot{tok}/getMe", timeout=15).json().get("result", {})
+        print(f"Telegram: token valido per @{me.get('username')}, messaggi in attesa: {len(upd.get('result', []))}")
         for u in reversed(upd.get("result", [])):
             m = u.get("message") or u.get("my_chat_member") or {}
             cid = (m.get("chat") or {}).get("id")
