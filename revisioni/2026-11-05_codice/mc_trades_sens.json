@@ -1,0 +1,50 @@
+{
+ "A": {
+  "edge dimezzato": {
+   "fase1": 86.0,
+   "entrambe": 76.5,
+   "sett_med_f1": 81
+  },
+  "edge zero": {
+   "fase1": 49.6,
+   "entrambe": 31.5,
+   "sett_med_f1": 75
+  }
+ },
+ "B": {
+  "edge dimezzato": {
+   "fase1": 91.2,
+   "entrambe": 83.9,
+   "sett_med_f1": 66
+  },
+  "edge zero": {
+   "fase1": 46.1,
+   "entrambe": 28.4,
+   "sett_med_f1": 68
+  }
+ },
+ "C": {
+  "edge dimezzato": {
+   "fase1": 84.6,
+   "entrambe": 73.3,
+   "sett_med_f1": 37
+  },
+  "edge zero": {
+   "fase1": 55.2,
+   "entrambe": 36.5,
+   "sett_med_f1": 35
+  }
+ },
+ "D": {
+  "edge dimezzato": {
+   "fase1": 83.8,
+   "entrambe": 73.0,
+   "sett_med_f1": 41
+  },
+  "edge zero": {
+   "fase1": 49.4,
+   "entrambe": 31.4,
+   "sett_med_f1": 41
+  }
+ }
+}

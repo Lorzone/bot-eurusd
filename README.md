@@ -27,6 +27,7 @@ Quattro bot paper girano insieme ogni ora su GitHub Actions, ognuno con un conto
 - `run_bots.py` — esecuzione oraria · `engine.py` — motore (stesso codice per live e backtest) · `strategies.py` — strategie
 - `bots/<A-D>/state.json`, `bots/<A-D>/trades.csv` — stato e storico di ogni bot
 - `compare.py`, `backtest_*.csv`, `expected.json` — backtest e valori attesi
+- `revisioni/` — rapporti delle revisioni notturne (idee provate, numeri, cosa è entrato o no)
 - Telegram: secret `TELEGRAM_TOKEN` (il chat ID viene trovato in automatico). Dati: Yahoo Finance (oro = future GC=F); con secret `OANDA_TOKEN` usa i prezzi di un conto demo OANDA.
 
 **Regola:** si correggono i bug, non le strategie dopo pochi trade persi. Le strategie si rivalutano con almeno 20-30 trade a testa.

@@ -1,0 +1,34 @@
+{
+ "A": {
+  "paths": 120,
+  "passata": 15.8,
+  "bocciata": 5.8,
+  "in_corso_dopo_1_anno": 78.3,
+  "giorni_mediani_pass": 203.0,
+  "rend_mediano_pct": -4.2
+ },
+ "B": {
+  "paths": 120,
+  "passata": 17.5,
+  "bocciata": 2.5,
+  "in_corso_dopo_1_anno": 80.0,
+  "giorni_mediani_pass": 196.0,
+  "rend_mediano_pct": -0.0
+ },
+ "C": {
+  "paths": 120,
+  "passata": 33.3,
+  "bocciata": 17.5,
+  "in_corso_dopo_1_anno": 49.2,
+  "giorni_mediani_pass": 108.5,
+  "rend_mediano_pct": -0.7
+ },
+ "D": {
+  "paths": 120,
+  "passata": 50.0,
+  "bocciata": 6.7,
+  "in_corso_dopo_1_anno": 43.3,
+  "giorni_mediani_pass": 142.5,
+  "rend_mediano_pct": 3.1
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "A": {
+  "fase1": 98.5,
+  "fase2": 98.6,
+  "entrambe": 97.1,
+  "settimane_mediane_fase1": 53.0,
+  "settimane_mediane_fase2": 22.0
+ },
+ "B": {
+  "fase1": 99.6,
+  "fase2": 99.6,
+  "entrambe": 99.2,
+  "settimane_mediane_fase1": 37.0,
+  "settimane_mediane_fase2": 15.0
+ },
+ "C": {
+  "fase1": 97.0,
+  "fase2": 97.1,
+  "entrambe": 94.2,
+  "settimane_mediane_fase1": 28.0,
+  "settimane_mediane_fase2": 12.0
+ },
+ "D": {
+  "fase1": 96.9,
+  "fase2": 97.4,
+  "entrambe": 94.3,
+  "settimane_mediane_fase1": 29.0,
+  "settimane_mediane_fase2": 11.0
+ }
+}
