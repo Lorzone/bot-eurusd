@@ -5,6 +5,9 @@ on:
       inizio:
         description: "Data di inizio (AAAA-MM-GG)"
         default: "2019-01-01"
+      simboli:
+        description: 'Simboli Dukascopy, lista JSON (es. ["EURUSD","XAUUSD"])'
+        default: '["EURUSD","GBPUSD","XAUUSD","USATECHIDXUSD","USA30IDXUSD"]'
 permissions:
   contents: write
 jobs:
@@ -14,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        simbolo: [EURUSD, GBPUSD, XAUUSD, USATECHIDXUSD, USA30IDXUSD]
+        simbolo: ${{ fromJSON(inputs.simboli) }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
