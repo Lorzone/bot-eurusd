@@ -1,0 +1,46 @@
+name: scarica-dati
+on:
+  workflow_dispatch:
+    inputs:
+      inizio:
+        description: "Data di inizio (AAAA-MM-GG)"
+        default: "2019-01-01"
+permissions:
+  contents: write
+jobs:
+  scarica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        simbolo: [EURUSD, GBPUSD, XAUUSD, USATECHIDXUSD, USA30IDXUSD]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pandas requests
+      - run: python tools/scarica_dukascopy.py ${{ matrix.simbolo }} ${{ inputs.inizio }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dati-${{ matrix.simbolo }}
+          path: dati/
+  salva:
+    needs: scarica
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          path: dati
+          merge-multiple: true
+      - run: |
+          ls -la dati
+          git config user.name "eurusd-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add dati
+          git diff --cached --quiet && exit 0
+          git commit -m "dati: candele 5 minuti Dukascopy dal ${{ inputs.inizio }}"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 10; done
