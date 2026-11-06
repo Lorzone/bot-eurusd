@@ -1,0 +1,18 @@
+{
+ "balance": 100000.0,
+ "peak": 100000.0,
+ "positions": {},
+ "done_days": [],
+ "day": null,
+ "day_start": 100000.0,
+ "challenge": "in corso",
+ "challenge_end": null,
+ "errors": [],
+ "skipped": [],
+ "last_bar": {
+  "NAS100": "2026-11-06 17:25:00+00:00"
+ },
+ "started": "2026-11-06 17:31:11.659265+00:00",
+ "equity": 100000.0,
+ "updated": "2026-11-06 17:31:12.136726+00:00"
+}
