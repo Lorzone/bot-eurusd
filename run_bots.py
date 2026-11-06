@@ -15,6 +15,7 @@ import pandas as pd
 import requests
 
 import engine
+import engine_intraday as EI
 from engine import BOTS, INSTR, Bot, new_state, signals, slot_id, START
 
 ROOT = Path(__file__).parent
@@ -23,6 +24,7 @@ NEWS_CACHE = ROOT / "news_cache.json"
 CHAT_FILE = ROOT / "telegram_chat.txt"
 EXPECTED = json.loads((ROOT / "expected.json").read_text()) if (ROOT / "expected.json").exists() else {}
 RUN_LOG = []
+DESC = {**{n: b["desc"] for n, b in BOTS.items()}, **{n: b["desc"] for n, b in EI.INTRA_BOTS.items()}}
 
 
 # ---------------- telegram ----------------
@@ -183,12 +185,12 @@ def dashboard(states, events, news_err, data_err):
         start = pd.Timestamp(st.get("started", now.isoformat()))
         weeks = max((pd.Timestamp(now) - start).days / 7, 1 / 7)
         if isinstance(st, dict) and "balance" in st:
-            L.append(f"| **{name}** | {BOTS[name]['desc']} | {st['balance']:,.0f}$ ({(st['balance'] / START - 1) * 100:+.2f}%) | "
+            L.append(f"| **{name}** | {DESC[name]} | {st['balance']:,.0f}$ ({(st['balance'] / START - 1) * 100:+.2f}%) | "
                      f"{st.get('equity', st['balance']):,.0f}$ | {st['challenge']} | {len(t)} | "
                      f"{len(t) / weeks:.1f} ({exp.get('trade_sett', '–')}) | "
                      f"{(t.R.mean() if len(t) else 0):+.2f} ({exp.get('R_medio', '–')}) | {len(st['positions'])} |")
         else:
-            L.append(f"| **{name}** | {BOTS[name]['desc']} | ERRORE | | | | | | |")
+            L.append(f"| **{name}** | {DESC[name]} | ERRORE | | | | | | |")
     L += ["", "_Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza è normale: "
           "conta dopo almeno 20-30 trade._", ""]
     pos = [(n, sid, p) for n, st in states.items() if "positions" in st for sid, p in st["positions"].items()]
@@ -243,6 +245,37 @@ def main():
             st.setdefault("errors", []).append(msg)
             st["errors"] = st["errors"][-20:]
             st_path.parent.mkdir(parents=True, exist_ok=True)
+            st_path.write_text(json.dumps(st, indent=1, default=str))
+            states[name] = st
+    # ---- bot intraday (E…): stato separato, stesse cartelle bots/<nome>/ ----
+    for name, cfg in EI.INTRA_BOTS.items():
+        d = BOTDIR / name
+        st_path, tr_path = d / "state.json", d / "trades.csv"
+        try:
+            d.mkdir(parents=True, exist_ok=True)
+            if st_path.exists():
+                st = json.loads(st_path.read_text())
+            else:
+                st = EI.new_state()
+                st["started"] = str(pd.Timestamp.now(tz="UTC"))
+            idata = {sl["sym"]: EI.get_candles_5m(sl) for sl in cfg["slots"]}
+
+            def on_close(row, tr_path=tr_path):
+                pd.DataFrame([row]).to_csv(tr_path, mode="a", header=not tr_path.exists(), index=False)
+
+            bot = EI.IntradayBot(name, st, notify=notify, on_close=on_close)
+            bot.process(idata)
+            st["equity"] = round(bot.equity(), 2)
+            st["updated"] = str(pd.Timestamp.now(tz="UTC"))
+            st["last_bar"] = {sl["sym"]: str(idata[sl["sym"]].index[-1]) for sl in cfg["slots"]}
+            st_path.write_text(json.dumps(st, indent=1, default=str))
+            states[name] = st
+        except Exception as ex:
+            msg = f"{datetime.now(timezone.utc):%m-%d %H:%M} {type(ex).__name__}: {ex}"
+            print(f"[{name}] ERRORE", traceback.format_exc())
+            st = json.loads(st_path.read_text()) if st_path.exists() else EI.new_state()
+            st.setdefault("errors", []).append(msg)
+            st["errors"] = st["errors"][-20:]
             st_path.write_text(json.dumps(st, indent=1, default=str))
             states[name] = st
     dashboard(states, events, news_err, data_err)

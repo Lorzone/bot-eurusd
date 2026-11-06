@@ -54,5 +54,17 @@
   "aperte": 6,
   "giorni_pass": 180.5,
   "r_medio_per_trade_atteso": 0.126
+ },
+ "E": {
+  "desc": "Nasdaq 100: continuazione prima ora (intraday)",
+  "trade_sett": 3.81,
+  "R_medio": 0.112,
+  "R_oos": 0.111,
+  "winrate": 51.0,
+  "max_dd": -7.2,
+  "pass_": 69,
+  "fail": 0,
+  "aperte": 12,
+  "giorni_pass": 159.0
  }
 }
