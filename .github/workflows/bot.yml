@@ -1,7 +1,7 @@
 name: bot-eurusd
 on:
   schedule:
-    - cron: "3 * * * 0-5"   # ogni ora, 3 minuti dopo la chiusura della candela (dom-ven, UTC)
+    - cron: "4,34 * * * 0-5"  # due volte all ora: GitHub salta spesso i run programmati (dom-ven, UTC)
   workflow_dispatch: {}      # pulsante "Run workflow" per farlo girare a mano
 permissions:
   contents: write
