@@ -1,8 +1,8 @@
 name: bot-eurusd
 on:
-  schedule:
-    - cron: "4,34 * * * 0-5"  # due volte all ora: GitHub salta spesso i run programmati (dom-ven, UTC)
-  workflow_dispatch: {}      # pulsante "Run workflow" per farlo girare a mano
+  # avviato ogni 30 minuti da cron-job.org (chiamata API workflow_dispatch):
+  # gli avvii programmati di GitHub saltavano per ore
+  workflow_dispatch: {}
 permissions:
   contents: write
 concurrency:
