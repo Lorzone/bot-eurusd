@@ -10,7 +10,7 @@ permissions:
 jobs:
   scarica:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix:

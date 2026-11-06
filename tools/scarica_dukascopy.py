@@ -63,8 +63,14 @@ def main():
     end = sys.argv[3] if len(sys.argv) > 3 else pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%d")
     days = [d for d in pd.date_range(start, end, freq="D") if d.weekday() != 5]  # sabato sempre chiuso
     t0 = time.time()
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(8) as ex:
         parts = list(ex.map(lambda d: day(sym, d), days))
+    # secondo giro, lento, sui giorni falliti
+    retry = list(FAILED)
+    FAILED.clear()
+    for ds in retry:
+        time.sleep(3)
+        parts.append(day(sym, pd.Timestamp(ds)))
     m1 = pd.concat([p for p in parts if p is not None]).sort_index()
     m1 = m1[~m1.index.duplicated()]
     m5 = m1.resample("5min", label="left", closed="left").agg(
@@ -74,7 +80,7 @@ def main():
     m5.to_csv(out / f"{sym}_5m.csv.gz", float_format="%.6g", compression="gzip")
     print(f"{sym}: {len(days)} giorni, {len(m1)} minuti -> {len(m5)} candele 5m "
           f"da {m5.index[0]} a {m5.index[-1]} in {time.time() - t0:.0f}s · giorni falliti: {len(FAILED)} {FAILED[:20]}")
-    if len(FAILED) > 0.02 * len(days):
+    if len(FAILED) > max(3, 0.02 * len(days)):
         sys.exit(f"troppi giorni falliti ({len(FAILED)})")
 
 
