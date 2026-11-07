@@ -1,5 +1,5 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-06 23:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-07 00:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
