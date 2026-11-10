@@ -1,25 +1,11 @@
 {
- "balance": 100000.0,
+ "balance": 99298.61737154507,
  "peak": 100000.0,
- "positions": {
-  "pullback:EURUSD": {
-   "sym": "EURUSD",
-   "side": -1,
-   "entry": 1.1223344802856445,
-   "entry_time": "2026-11-10 03:00:00+00:00",
-   "sl_dist": 0.0020229922589860604,
-   "stop": 1.1242314683255754,
-   "tp": null,
-   "best": 1.1222084760665894,
-   "bars": 4,
-   "risk_usd": 700.0,
-   "lots": 3.46
-  }
- },
+ "positions": {},
  "last_bar": {
-  "pullback:EURUSD": "2026-11-10 06:00:00+00:00",
-  "pullback:GBPUSD": "2026-11-10 06:00:00+00:00",
-  "pullback:AUDUSD": "2026-11-10 06:00:00+00:00"
+  "pullback:EURUSD": "2026-11-10 07:00:00+00:00",
+  "pullback:GBPUSD": "2026-11-10 07:00:00+00:00",
+  "pullback:AUDUSD": "2026-11-10 07:00:00+00:00"
  },
  "day": "2026-11-10",
  "day_start": 100000.0,
@@ -30,6 +16,6 @@
   "2026-11-06 23:00 LONG GBPUSD (pullback) saltato: venerd\u00ec sera / weekend"
  ],
  "started": "2026-11-04 21:39:15.105500+00:00",
- "equity": 99738.32,
- "updated": "2026-11-10 07:31:12.460014+00:00"
+ "equity": 99298.62,
+ "updated": "2026-11-10 08:01:28.476300+00:00"
 }
