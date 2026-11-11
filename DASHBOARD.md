@@ -1,11 +1,11 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-11 09:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-11 10:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
-| **A** | Pullback EURUSD (riferimento) | 98,998$ (-1.00%) | 102,114$ | in corso | 1 | 1.2 (1.08) | -1.00 (0.153) | 1 |
-| **B** | Pullback + breakout EURUSD | 97,735$ (-2.26%) | 100,060$ | in corso | 3 | 3.5 (2.09) | -1.01 (0.16) | 1 |
-| **C** | Pullback EURUSD + GBPUSD + AUDUSD | 98,711$ (-1.29%) | 100,899$ | in corso | 2 | 2.3 (3.33) | -0.92 (0.124) | 1 |
+| **A** | Pullback EURUSD (riferimento) | 98,998$ (-1.00%) | 102,513$ | in corso | 1 | 1.2 (1.08) | -1.00 (0.153) | 1 |
+| **B** | Pullback + breakout EURUSD | 97,735$ (-2.26%) | 100,358$ | in corso | 3 | 3.5 (2.09) | -1.01 (0.16) | 1 |
+| **C** | Pullback EURUSD + GBPUSD + AUDUSD | 98,711$ (-1.29%) | 101,180$ | in corso | 2 | 2.3 (3.33) | -0.92 (0.124) | 2 |
 | **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 96,982$ | in corso | 4 | 4.7 (3.08) | -1.01 (0.126) | 0 |
 | **E** | Nasdaq 100: continuazione prima ora (intraday) | 99,536$ (-0.46%) | 99,536$ | in corso | 2 | 3.5 (3.81) | -0.31 (0.112) | 0 |
 
@@ -14,9 +14,10 @@ _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza
 ## Posizioni aperte
 | Bot | Slot | Lato | Ingresso | Stop | Target | Da |
 |---|---|---|---|---|---|---|
-| A | pullback:EURUSD | SHORT | 1.123 | 1.1167 | trailing | 2026-11-10 10:00 |
-| B | pullback:EURUSD | SHORT | 1.123 | 1.1167 | trailing | 2026-11-10 10:00 |
-| C | pullback:EURUSD | SHORT | 1.123 | 1.1167 | trailing | 2026-11-10 10:00 |
+| A | pullback:EURUSD | SHORT | 1.123 | 1.1161 | trailing | 2026-11-10 10:00 |
+| B | pullback:EURUSD | SHORT | 1.123 | 1.1161 | trailing | 2026-11-10 10:00 |
+| C | pullback:EURUSD | SHORT | 1.123 | 1.1161 | trailing | 2026-11-10 10:00 |
+| C | pullback:GBPUSD | LONG | 1.3326 | 1.3296 | trailing | 2026-11-11 10:00 |
 
 ## Errori e avvisi
 - nessuno ✅
