@@ -1,2 +1,3 @@
 bot,slot,entry_time,exit_time,side,entry,exit,sl_pips,R,pnl,balance,why
 C,pullback:EURUSD,2026-11-10 03:00:00+00:00,2026-11-10 08:00:00+00:00,SHORT,1.12233,1.12423,20.2,-1.002,-701.38,99298.62,STOP
+C,pullback:GBPUSD,2026-11-10 20:00:00+00:00,2026-11-11 09:00:00+00:00,LONG,1.33486,1.33192,36.8,-0.845,-587.12,98711.5,STOP
