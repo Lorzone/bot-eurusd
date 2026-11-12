@@ -11,18 +11,18 @@
    "stop": 1.1111141130354933,
    "tp": null,
    "best": 1.1086474657058716,
-   "bars": 37,
+   "bars": 38,
    "risk_usd": 695.0903216008155,
    "lots": 2.82
   }
  },
  "last_bar": {
-  "pullback:EURUSD": "2026-11-11 22:00:00+00:00",
-  "pullback:GBPUSD": "2026-11-11 22:00:00+00:00",
-  "pullback:AUDUSD": "2026-11-11 22:00:00+00:00"
+  "pullback:EURUSD": "2026-11-12 00:00:00+00:00",
+  "pullback:GBPUSD": "2026-11-12 00:00:00+00:00",
+  "pullback:AUDUSD": "2026-11-12 00:00:00+00:00"
  },
- "day": "2026-11-11",
- "day_start": 99298.61737154507,
+ "day": "2026-11-12",
+ "day_start": 98073.9563000825,
  "challenge": "in corso",
  "challenge_end": null,
  "errors": [],
@@ -30,6 +30,6 @@
   "2026-11-06 23:00 LONG GBPUSD (pullback) saltato: venerd\u00ec sera / weekend"
  ],
  "started": "2026-11-04 21:39:15.105500+00:00",
- "equity": 101900.53,
- "updated": "2026-11-12 00:31:21.491952+00:00"
+ "equity": 101692.29,
+ "updated": "2026-11-12 01:01:18.298893+00:00"
 }
