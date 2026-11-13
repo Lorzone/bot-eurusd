@@ -1,13 +1,13 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-13 17:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-13 18:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
 | **A** | Pullback EURUSD (riferimento) | 104,342$ (+4.34%) | 104,342$ | in corso | 2 | 1.8 (1.08) | +2.20 (0.153) | 0 |
-| **B** | Pullback + breakout EURUSD | 101,723$ (+1.72%) | 102,996$ | in corso | 4 | 3.5 (2.09) | +0.59 (0.16) | 1 |
+| **B** | Pullback + breakout EURUSD | 101,723$ (+1.72%) | 103,071$ | in corso | 4 | 3.5 (2.09) | +0.59 (0.16) | 1 |
 | **C** | Pullback EURUSD + GBPUSD + AUDUSD | 101,826$ (+1.83%) | 101,826$ | in corso | 4 | 3.5 (3.33) | +0.66 (0.124) | 0 |
-| **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 99,299$ | in corso | 4 | 3.5 (3.08) | -1.01 (0.126) | 2 |
-| **E** | Nasdaq 100: continuazione prima ora (intraday) | 99,732$ (-0.27%) | 99,617$ | in corso | 3 | 3.0 (3.81) | -0.12 (0.112) | 1 |
+| **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 99,280$ | in corso | 4 | 3.5 (3.08) | -1.01 (0.126) | 2 |
+| **E** | Nasdaq 100: continuazione prima ora (intraday) | 99,732$ (-0.27%) | 99,624$ | in corso | 3 | 3.0 (3.81) | -0.12 (0.112) | 1 |
 
 _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza è normale: conta dopo almeno 20-30 trade._
 
