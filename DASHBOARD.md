@@ -1,5 +1,5 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-15 06:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-15 07:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
@@ -25,3 +25,10 @@ _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza
 - [C] 2026-11-06 23:00 LONG GBPUSD (pullback) saltato: venerdì sera / weekend
 - [D] 2026-11-10 10:00 SHORT EURUSD (pullback) saltato: rischio aperto totale al massimo (2.25%)
 
+## Prossime notizie ad alto impatto (UTC)
+- Mon 16 17:00 · USD · Fed Chairman Warsh Speaks
+- Mon 16 22:50 · AUD · RBA Gov Bullock Speaks
+- Tue 17 13:30 · USD · Core Retail Sales m/m
+- Tue 17 13:30 · USD · Retail Sales m/m
+- Wed 18 07:00 · GBP · CPI y/y
+- Wed 18 07:30 · GBP · BOE Gov Bailey Speaks
