@@ -1,12 +1,12 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-15 23:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-16 00:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
 | **A** | Pullback EURUSD (riferimento) | 104,342$ (+4.34%) | 104,342$ | in corso | 2 | 1.3 (1.08) | +2.20 (0.153) | 0 |
 | **B** | Pullback + breakout EURUSD | 101,723$ (+1.72%) | 103,101$ | in corso | 4 | 2.5 (2.09) | +0.59 (0.16) | 1 |
 | **C** | Pullback EURUSD + GBPUSD + AUDUSD | 101,826$ (+1.83%) | 101,826$ | in corso | 4 | 2.5 (3.33) | +0.66 (0.124) | 0 |
-| **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 99,376$ | in corso | 4 | 2.5 (3.08) | -1.01 (0.126) | 2 |
+| **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 99,238$ | in corso | 4 | 2.5 (3.08) | -1.01 (0.126) | 2 |
 | **E** | Nasdaq 100: continuazione prima ora (intraday) | 99,378$ (-0.62%) | 99,378$ | in corso | 4 | 3.1 (3.81) | -0.21 (0.112) | 0 |
 
 _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza è normale: conta dopo almeno 20-30 trade._
@@ -19,16 +19,12 @@ _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza
 | D | breakout:XAUUSD | SHORT | 4009.1 | 4096.1 | 3748.2 | 2026-11-11 16:00 |
 
 ## Errori e avvisi
-- nessuno ✅
+- ⚠️ dati AUDUSD vecchi: ultima candela 2026-11-13 22:00:00+00:00
+- ⚠️ dati EURUSD vecchi: ultima candela 2026-11-13 22:00:00+00:00
+- ⚠️ dati GBPUSD vecchi: ultima candela 2026-11-13 22:00:00+00:00
+- ⚠️ calendario notizie non disponibile: nessun dato
 
 ## Segnali saltati (ultimi)
 - [C] 2026-11-06 23:00 LONG GBPUSD (pullback) saltato: venerdì sera / weekend
 - [D] 2026-11-10 10:00 SHORT EURUSD (pullback) saltato: rischio aperto totale al massimo (2.25%)
 
-## Prossime notizie ad alto impatto (UTC)
-- Mon 16 17:00 · USD · Fed Chairman Warsh Speaks
-- Mon 16 22:50 · AUD · RBA Gov Bullock Speaks
-- Tue 17 13:30 · USD · Core Retail Sales m/m
-- Tue 17 13:30 · USD · Retail Sales m/m
-- Wed 18 07:00 · GBP · CPI y/y
-- Wed 18 07:30 · GBP · BOE Gov Bailey Speaks
