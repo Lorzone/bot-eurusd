@@ -1,12 +1,12 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-17 13:01 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-17 13:31 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
 | **A** | Pullback EURUSD (riferimento) | 104,342$ (+4.34%) | 104,342$ | in corso | 2 | 1.2 (1.08) | +2.20 (0.153) | 0 |
 | **B** | Pullback + breakout EURUSD | 101,723$ (+1.72%) | 103,489$ | in corso | 4 | 2.3 (2.09) | +0.59 (0.16) | 1 |
 | **C** | Pullback EURUSD + GBPUSD + AUDUSD | 101,826$ (+1.83%) | 101,826$ | in corso | 4 | 2.3 (3.33) | +0.66 (0.124) | 0 |
-| **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 99,960$ | in corso | 4 | 2.3 (3.08) | -1.01 (0.126) | 2 |
+| **D** | Pullback + breakout EURUSD + breakout oro | 96,982$ (-3.02%) | 99,949$ | in corso | 4 | 2.3 (3.08) | -1.01 (0.126) | 2 |
 | **E** | Nasdaq 100: continuazione prima ora (intraday) | 99,541$ (-0.46%) | 99,541$ | in corso | 5 | 3.5 (3.81) | -0.12 (0.112) | 0 |
 
 _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza è normale: conta dopo almeno 20-30 trade._
@@ -26,9 +26,8 @@ _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza
 - [D] 2026-11-10 10:00 SHORT EURUSD (pullback) saltato: rischio aperto totale al massimo (2.25%)
 
 ## Prossime notizie ad alto impatto (UTC)
-- Tue 17 13:30 · USD · Core Retail Sales m/m
-- Tue 17 13:30 · USD · Retail Sales m/m
 - Wed 18 07:00 · GBP · CPI y/y
 - Wed 18 15:00 · GBP · BOE Gov Bailey Speaks
 - Wed 18 19:00 · USD · FOMC Meeting Minutes
 - Thu 19 00:30 · AUD · Employment Change
+- Thu 19 00:30 · AUD · Unemployment Rate
