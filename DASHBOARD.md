@@ -1,5 +1,5 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-18 14:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-18 15:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
@@ -19,7 +19,6 @@ _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza
 - [D] 2026-11-10 10:00 SHORT EURUSD (pullback) saltato: rischio aperto totale al massimo (2.25%)
 
 ## Prossime notizie ad alto impatto (UTC)
-- Wed 18 15:00 · GBP · BOE Gov Bailey Speaks
 - Wed 18 19:00 · USD · FOMC Meeting Minutes
 - Thu 19 00:30 · AUD · Employment Change
 - Thu 19 00:30 · AUD · Unemployment Rate
