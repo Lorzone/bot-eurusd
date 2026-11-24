@@ -1,24 +1,24 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-24 16:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-24 17:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
-| **A** | Pullback EURUSD (riferimento) | 104,342$ (+4.34%) | 104,342$ | in corso | 2 | 0.7 (1.08) | +2.20 (0.153) | 1 |
-| **B** | Pullback + breakout EURUSD | 103,111$ (+3.11%) | 103,111$ | in corso | 6 | 2.2 (2.09) | +0.72 (0.16) | 1 |
-| **C** | Pullback EURUSD + GBPUSD + AUDUSD | 101,826$ (+1.83%) | 101,826$ | in corso | 4 | 1.5 (3.33) | +0.66 (0.124) | 1 |
-| **D** | Pullback + breakout EURUSD + breakout oro | 100,552$ (+0.55%) | 102,218$ | in corso | 7 | 2.6 (3.08) | +0.13 (0.126) | 2 |
-| **E** | Nasdaq 100: continuazione prima ora (intraday) | 102,400$ (+2.40%) | 102,586$ | in corso | 9 | 3.7 (3.81) | +0.35 (0.112) | 1 |
+| **A** | Pullback EURUSD (riferimento) | 104,342$ (+4.34%) | 104,508$ | in corso | 2 | 0.7 (1.08) | +2.20 (0.153) | 1 |
+| **B** | Pullback + breakout EURUSD | 103,111$ (+3.11%) | 103,234$ | in corso | 6 | 2.2 (2.09) | +0.72 (0.16) | 1 |
+| **C** | Pullback EURUSD + GBPUSD + AUDUSD | 101,826$ (+1.83%) | 101,939$ | in corso | 4 | 1.5 (3.33) | +0.66 (0.124) | 1 |
+| **D** | Pullback + breakout EURUSD + breakout oro | 100,552$ (+0.55%) | 102,346$ | in corso | 7 | 2.6 (3.08) | +0.13 (0.126) | 2 |
+| **E** | Nasdaq 100: continuazione prima ora (intraday) | 102,400$ (+2.40%) | 102,605$ | in corso | 9 | 3.7 (3.81) | +0.35 (0.112) | 1 |
 
 _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza è normale: conta dopo almeno 20-30 trade._
 
 ## Posizioni aperte
 | Bot | Slot | Lato | Ingresso | Stop | Target | Da |
 |---|---|---|---|---|---|---|
-| A | pullback:EURUSD | SHORT | 1.0975 | 1.1005 | trailing | 2026-11-24 16:00 |
-| B | pullback:EURUSD | SHORT | 1.0975 | 1.1005 | trailing | 2026-11-24 16:00 |
-| C | pullback:EURUSD | SHORT | 1.0975 | 1.1005 | trailing | 2026-11-24 16:00 |
+| A | pullback:EURUSD | SHORT | 1.0975 | 1.0997 | trailing | 2026-11-24 16:00 |
+| B | pullback:EURUSD | SHORT | 1.0975 | 1.0997 | trailing | 2026-11-24 16:00 |
+| C | pullback:EURUSD | SHORT | 1.0975 | 1.0997 | trailing | 2026-11-24 16:00 |
 | D | breakout:XAUUSD | SHORT | 3755.5 | 3841 | 3499 | 2026-11-18 16:00 |
-| D | pullback:EURUSD | SHORT | 1.0975 | 1.1005 | trailing | 2026-11-24 16:00 |
+| D | pullback:EURUSD | SHORT | 1.0975 | 1.0997 | trailing | 2026-11-24 16:00 |
 | E | NAS100:2026-11-24 | SHORT | 26099 | 26427 | trailing | 2026-11-24 15:30 |
 
 ## Errori e avvisi
