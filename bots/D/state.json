@@ -11,7 +11,7 @@
    "stop": 3841.003761521903,
    "tp": 3498.988715434291,
    "best": 3755.5,
-   "bars": 99,
+   "bars": 100,
    "risk_usd": 759.9515830045723,
    "lots": 0.09
   },
@@ -32,10 +32,10 @@
  "last_bar": {
   "pullback:EURUSD": "2026-11-24 22:00:00+00:00",
   "breakout:EURUSD": "2026-11-24 22:00:00+00:00",
-  "breakout:XAUUSD": "2026-11-24 21:00:00+00:00"
+  "breakout:XAUUSD": "2026-11-24 23:00:00+00:00"
  },
- "day": "2026-11-24",
- "day_start": 101326.87773394298,
+ "day": "2026-11-25",
+ "day_start": 100551.95598889812,
  "challenge": "in corso",
  "challenge_end": null,
  "errors": [],
@@ -43,6 +43,6 @@
   "2026-11-10 10:00 SHORT EURUSD (pullback) saltato: rischio aperto totale al massimo (2.25%)"
  ],
  "started": "2026-11-04 21:39:15.115764+00:00",
- "equity": 102482.4,
- "updated": "2026-11-24 23:31:09.740193+00:00"
+ "equity": 102558.83,
+ "updated": "2026-11-25 00:01:24.876739+00:00"
 }
