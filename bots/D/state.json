@@ -19,10 +19,10 @@
  "last_bar": {
   "pullback:EURUSD": "2026-11-25 22:00:00+00:00",
   "breakout:EURUSD": "2026-11-25 22:00:00+00:00",
-  "breakout:XAUUSD": "2026-11-25 21:00:00+00:00"
+  "breakout:XAUUSD": "2026-11-25 23:00:00+00:00"
  },
- "day": "2026-11-25",
- "day_start": 100551.95598889812,
+ "day": "2026-11-26",
+ "day_start": 102250.47894502475,
  "challenge": "in corso",
  "challenge_end": null,
  "errors": [],
@@ -30,6 +30,6 @@
   "2026-11-10 10:00 SHORT EURUSD (pullback) saltato: rischio aperto totale al massimo (2.25%)"
  ],
  "started": "2026-11-04 21:39:15.115764+00:00",
- "equity": 102378.78,
- "updated": "2026-11-25 23:31:09.049488+00:00"
+ "equity": 102346.72,
+ "updated": "2026-11-26 00:01:25.404936+00:00"
 }
