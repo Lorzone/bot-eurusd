@@ -1,23 +1,15 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-26 14:31 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-26 15:01 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
-| **A** | Pullback EURUSD (riferimento) | 104,613$ (+4.61%) | 104,440$ | in corso | 3 | 1.0 (1.08) | +1.55 (0.153) | 1 |
-| **B** | Pullback + breakout EURUSD | 103,312$ (+3.31%) | 103,183$ | in corso | 7 | 2.3 (2.09) | +0.65 (0.16) | 1 |
-| **C** | Pullback EURUSD + GBPUSD + AUDUSD | 102,740$ (+2.74%) | 102,620$ | in corso | 6 | 2.0 (3.33) | +0.65 (0.124) | 1 |
-| **D** | Pullback + breakout EURUSD + breakout oro | 102,250$ (+2.25%) | 102,122$ | in corso | 10 | 3.3 (3.08) | +0.32 (0.126) | 1 |
+| **A** | Pullback EURUSD (riferimento) | 104,344$ (+4.34%) | 104,344$ | in corso | 4 | 1.3 (1.08) | +1.10 (0.153) | 0 |
+| **B** | Pullback + breakout EURUSD | 103,113$ (+3.11%) | 103,113$ | in corso | 8 | 2.7 (2.09) | +0.54 (0.16) | 0 |
+| **C** | Pullback EURUSD + GBPUSD + AUDUSD | 102,555$ (+2.55%) | 102,555$ | in corso | 7 | 2.3 (3.33) | +0.52 (0.124) | 0 |
+| **D** | Pullback + breakout EURUSD + breakout oro | 102,052$ (+2.05%) | 102,052$ | in corso | 11 | 3.7 (3.08) | +0.26 (0.126) | 0 |
 | **E** | Nasdaq 100: continuazione prima ora (intraday) | 101,347$ (+1.35%) | 101,347$ | in corso | 11 | 4.1 (3.81) | +0.17 (0.112) | 0 |
 
 _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza è normale: conta dopo almeno 20-30 trade._
-
-## Posizioni aperte
-| Bot | Slot | Lato | Ingresso | Stop | Target | Da |
-|---|---|---|---|---|---|---|
-| A | pullback:EURUSD | SHORT | 1.0983 | 1.0989 | trailing | 2026-11-25 20:00 |
-| B | pullback:EURUSD | SHORT | 1.0983 | 1.0989 | trailing | 2026-11-25 20:00 |
-| C | pullback:EURUSD | SHORT | 1.0983 | 1.0989 | trailing | 2026-11-25 20:00 |
-| D | pullback:EURUSD | SHORT | 1.0983 | 1.0989 | trailing | 2026-11-25 20:00 |
 
 ## Errori e avvisi
 - ⚠️ dati XAUUSD vecchi: ultima candela 2026-11-26 04:00:00+00:00
