@@ -1,5 +1,5 @@
 # Bot paper — confronto
-_Aggiornato 2026-11-27 15:01 UTC · in gara dal 2026-11-04_
+_Aggiornato 2026-11-27 15:31 UTC · in gara dal 2026-11-04_
 
 | Bot | Strategia | Saldo | Equity | Challenge | Trade | Trade/sett (atteso) | R medio (atteso) | Aperte |
 |---|---|---|---|---|---|---|---|---|
@@ -17,7 +17,7 @@ _Atteso = backtest 2024-2026 con lo stesso motore. Con pochi trade la differenza
 | C | pullback:AUDUSD | SHORT | 0.6672 | 0.66701 | trailing | 2026-11-27 07:00 |
 
 ## Errori e avvisi
-- ⚠️ dati XAUUSD vecchi: ultima candela 2026-11-26 04:00:00+00:00
+- nessuno ✅
 
 ## Segnali saltati (ultimi)
 - [C] 2026-11-06 23:00 LONG GBPUSD (pullback) saltato: venerdì sera / weekend
